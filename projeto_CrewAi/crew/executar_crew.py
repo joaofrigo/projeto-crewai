@@ -21,12 +21,18 @@ def gerar_artigo_completo(topico: str) -> str:
 
     # Tarefa de Escrita
     tarefa_escrita = Task(
-        description="Escrever um artigo com no mínimo 300 palavras baseado nas informações da tarefa anterior",
-        expected_output="Artigo com introdução, desenvolvimento e conclusão",
-        agent=escritor,
-        context=[tarefa_pesquisa]  # O escritor recebe o resumo do pesquisador
-    )
-
+    description=(
+        "Escrever um artigo com no mínimo 300 palavras baseado nas informações da tarefa anterior. "
+        "O artigo deve seguir a estrutura abaixo:\n\n"
+        "1. Introdução: Apresente o tema do artigo, explicando brevemente sobre o que será discutido.\n"
+        "2. Desenvolvimento: Apresente as informações mais detalhadas, argumente sobre o tema, desenvolva ideias principais e secundárias.\n"
+        "3. Conclusão: Resuma os pontos abordados, fornecendo uma reflexão final sobre o tema.\n\n"
+        "A conclusão deve trazer um fechamento claro e relacionado ao tema discutido. Escreva o artigo em português."
+    ),
+    expected_output="Artigo com introdução, desenvolvimento e conclusão, contendo no mínimo 300 palavras.",
+    agent=escritor,
+    context=[tarefa_pesquisa]  # O escritor recebe o resumo do pesquisador
+)
     # Executa as tarefas com os agentes
     crew = Crew(
         agents=[pesquisador, escritor],
