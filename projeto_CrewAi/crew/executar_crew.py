@@ -27,7 +27,9 @@ def gerar_artigo_completo(topico: str) -> str:
         "1. Introdução: Apresente o tema do artigo, explicando brevemente sobre o que será discutido.\n"
         "2. Desenvolvimento: Apresente as informações mais detalhadas, argumente sobre o tema, desenvolva ideias principais e secundárias.\n"
         "3. Conclusão: Resuma os pontos abordados, fornecendo uma reflexão final sobre o tema.\n\n"
-        "A conclusão deve trazer um fechamento claro e relacionado ao tema discutido. Escreva o artigo em português."
+        "A conclusão deve trazer um fechamento claro e relacionado ao tema discutido. Escreva o artigo em português." \
+        "é de suma importância e o ponto mais relevante, que para o resultado seja adequado, use o context da tarefa_pesquisa" \
+        "Pode e deve esperar até a pesquisa terminar"
     ),
     expected_output="Artigo com introdução, desenvolvimento e conclusão, contendo no mínimo 300 palavras.",
     agent=escritor,

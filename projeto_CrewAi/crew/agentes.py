@@ -28,21 +28,20 @@ if not IS_MIGRATE:
         backstory="Especialista em síntese de dados relevantes da Wikipedia.",
         tools=[wiki_tool],
         llm=make_llm(),
-        max_iter=3,  # Limita etapas de processamento
+        max_iter=2,  # Limita etapas de processamento
+        allow_delegation=False,  # Força conclusão completa da pesquisa
         memory=True,  # Mantém histórico do processo
     )
 
     escritor = Agent(
         role="Escritor de Artigos",
-        goal="Gerar artigos práticos e conciso",
+        goal="Gerar artigos práticos e concisos, esperando o resultado do pesquisador",
         backstory="Redator técnico com foco em objetividade.",
         llm=make_llm(),
         max_iter=3,
+        allow_delegation=False,  # Força conclusão completa da pesquisa
         memory=True,  # Mantém histórico do processo 
     )
 else:
     pesquisador = None
     escritor = None
-
-allow_delegation=False,  # Força conclusão completa da pesquisa
-memory=True  # Mantém histórico do processo

@@ -1,4 +1,13 @@
 """
+Arquivo de testes de conexão, IA e similares antes de serem concebidos no sitema
+"""
+
+
+
+
+
+
+"""
 import os
 from litellm import completion
 from dotenv import load_dotenv
