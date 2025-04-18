@@ -1,0 +1,3 @@
+virtual/Scripts/activate
+
+(caso precise reiniciar o ambiente virtual, devo recolocar o novo interpretador de código python no command pallete do vs code)

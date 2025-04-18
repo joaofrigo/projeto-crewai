@@ -1,0 +1,12 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="topico">Tema do artigo:</label>
+    <input type="text" name="topico" required>
+    <button type="submit">Gerar Artigo</button>
+  </form>
+  
+  {% if artigo %}
+    <h2>Artigo sobre "{{ topico }}":</h2>
+    <p>{{ artigo|linebreaks }}</p>
+  {% endif %}
+  
