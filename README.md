@@ -34,4 +34,10 @@ Se precisar desse código, só precisa rodar o seguinte comando na pasta raiz (r
 ```bash
 python manage.py runserver
 ```
+Mas não se esqueça de instalar as dependências com:
+
+```bash
+pip install -r requirements.txt
+```
+
 Mas se quiser rodar ele em um servidor, provavalmente só ira precisar ajustar o runtime e o Procfile.
